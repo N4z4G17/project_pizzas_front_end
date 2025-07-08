@@ -75,7 +75,7 @@
                         </figcaption>
 
                     </figure>
-                    <button class="button" value="1"> AÑADIR AL CARRITO <i
+                    <button class="button" value="1" data-price="12500"> AÑADIR AL CARRITO <i
                             class="fa-solid fa-cart-shopping"></i></button>
                 </div>
             </li>
@@ -93,7 +93,7 @@
                             <time>27/06/2025</time>
                         </figcaption>
                     </figure>
-                    <button class="button" value="2">
+                    <button class="button" value="2" data-price="15100">
                         Añadir al carrito <i class="fa-solid fa-cart-shopping"></i>
                     </button>
                 </div>
@@ -112,7 +112,7 @@
                             <time>27/06/2025</time>
                         </figcaption>
                     </figure>
-                    <button class="button" value="3">
+                    <button class="button" value="3" data-price="14000">
                         Añadir al carrito <i class="fa-solid fa-cart-shopping"></i>
                     </button>
                 </div>
@@ -131,7 +131,7 @@
                             <time>27/06/2025</time>
                         </figcaption>
                     </figure>
-                    <button class="button" value="4">
+                    <button class="button" value="4" data-price="10000">
                         Añadir al carrito <i class="fa-solid fa-cart-shopping"></i>
                     </button>
                 </div>
@@ -150,7 +150,7 @@
                             <time>27/06/2025</time>
                         </figcaption>
                     </figure>
-                    <button class="button" value="5">
+                    <button class="button" value="5" data-price="16000">
                         Añadir al carrito <i class="fa-solid fa-cart-shopping"></i>
                     </button>
                 </div>
@@ -170,7 +170,7 @@
                             <time>27/06/2025</time>
                         </figcaption>
                     </figure>
-                    <button class="button" value="6">
+                    <button class="button" value="6" data-price="19000">
                         Añadir al carrito <i class="fa-solid fa-cart-shopping"></i>
                     </button>
                 </div>
@@ -185,6 +185,7 @@
                     <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Sucursales & Delivery</a></li>
                     <li><a href="#">Contacto</a></li>
+                    <li><a href="login.html">Login</a></li>
                     <li><a href="#">Política de Privacidad</a></li>
                 </ul>
             </div>
@@ -212,6 +213,36 @@
 
 
         </footer>
+        <script>
+            
+ const countButtons=document.querySelectorAll("button").length;
+//RECORRER "LOS BUTTONS" PARA SABER LA CANTIDAD 
+let products=[];
+let totalPrice= 0;
+for(let i=0; i<countButtons; i++){
+    document.querySelectorAll("button")[i].addEventListener("click",showValue);
+}
+
+function showValue(){
+    // SE HIZO CLICK SOBRE "EL BUTTON" DE UNA PIZZA.
+const price= parseFloat(this.getAttribute("data-price"));
+    if(products.includes(this.value)){
+        //SI EL PRODUCTO YA ESTA EN EL ARREGLO, NO TENDRIA QUE SELECCIONAR EL MISMO PRODUCTO
+        return;
+    }
+    else{
+    //CAMBIAR COLOR A ROJO    
+        this.style.backgroundColor= "#a50c39";
+        this.innerHTML="AGREGADO";//`Agregado <i class="fa-solid fa-cart-shopping"></i>`;
+    products.push(this.value);
+    console.log(products);
+    totalPrice=totalPrice+price;
+    console.log("TOTAL : " +totalPrice);
+   document.getElementById("badge").setAttribute("value",products.length);
+
+}   
+}
+        </script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@ define("PASS_REAL", "maria123456");
 $usr = $_POST['username'];
 //echo "<br>";
 $pass = $_POST['password'];
-if ($usr == USER_REAL && $pass == PASS_REAL) {
+/*if ($usr == USER_REAL && $pass == PASS_REAL) {
     echo "<div class='flex flex-col justify-center items-center h-screen'>";
     echo "<h1 class='font-[Raleway]  font-extrabold text-3xl'> ¡¡¡BIENVENID@ ".USER_REAL."!!! </h1>";
     echo "<h1 class='font-[Raleway]'>". date('d-m-Y') . "</h1>";
@@ -33,7 +33,9 @@ if ($usr == USER_REAL && $pass == PASS_REAL) {
     echo "<div class='flex flex-col justify-center items-center h-screen'>";
     echo "<h1 class='font-[Raleway]  font-extrabold text-3xl'> LOS DATOS INGRESADOS SON INCORRECTOS </h1>";
     "</div>";
-}
+}*/
+
+//Check if username
 ?>
 
 </body>
